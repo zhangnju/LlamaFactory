@@ -184,7 +184,7 @@ def run_chat() -> None:
     while True:
         try:
             query = input("\nUser: ")
-        except EOFError:
+        except (EOFError, KeyboardInterrupt):
             break
         except UnicodeDecodeError:
             print("Detected decoding error at the inputs, please set the terminal encoding to utf-8.")
